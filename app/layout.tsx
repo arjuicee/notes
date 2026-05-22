@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     shortcut: "/icons/icon-192x192.png",
     apple: "/icons/icon-192x192.png",
   },
-  themeColor: "#000000",
   manifest: "/manifest.json",
 };
 

@@ -107,6 +107,24 @@ export function getSubjects(dept: string, sem: string) {
     });
 }
 
+export function getPyqSubjects(dept: string, sem: string) {
+  const url =
+    `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=pyq&tq=` +
+    encodeURIComponent(
+      `SELECT E, COUNT(E) WHERE C = '${dept.toUpperCase()}' AND D = ${sem} GROUP BY E ORDER BY E`
+    );
+
+  return getData(url)
+    .then(data => {
+      if (data.length === 0) return [];
+      return data.flatMap(row => row[0]);
+    })
+    .catch(error => {
+      console.error("Fetch failed:", error);
+      return [];
+    });
+}
+
 export function getContributors(){
   const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=contributors`;
 

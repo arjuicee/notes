@@ -3,7 +3,7 @@ import { getSubjects } from "@/lib/data";
 export async function generateStaticParams({
   params,
 }: {
-  params: Promise<{ dept: string; sem: string }>;
+  params: Promise<{ dept: string; sem: string; subject: string }> | { dept: string; sem: string; subject: string };
 }) {
   const { dept, sem } = await params;
   const subjects = await getSubjects(dept, sem);
