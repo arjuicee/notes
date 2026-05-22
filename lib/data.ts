@@ -35,21 +35,30 @@ export interface PYQ {
   File: string;
 }
 
-export function getData(url: string): Promise<string[][]> {
-  return new Promise((resolve, reject) => {
-    Papa.parse<string[]>(url, {
-      download: true,
-      skipEmptyLines: true,
-      complete(results) {
-        const d = results.data;
-        d.shift(); // Remove header row
-        resolve(d);
-      },
-      error(error) {
-        reject(error);
-      }
+export async function getData(url: string): Promise<string[][]> {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const csvText = await response.text();
+    
+    return new Promise((resolve, reject) => {
+      Papa.parse<string[]>(csvText, {
+        skipEmptyLines: true,
+        complete(results) {
+          const d = results.data;
+          d.shift(); // Remove header row
+          resolve(d);
+        },
+        error(error: any) {
+          reject(error);
+        }
+      });
     });
-  });
+  } catch (error) {
+    return Promise.reject(error);
+  }
 }
 
 export async function getModule(dept: string, sem: string, subject: string, module: string) {

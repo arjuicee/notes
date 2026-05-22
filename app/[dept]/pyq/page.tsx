@@ -2,10 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Footer from "@/components/footer";
 
-export async function generateStaticParams() {
-  return [{ dept: "cse" }, { dept: "ece" }, { dept: "it" }];
-}
-
 export default async function Dept({
   params,
 }: {
