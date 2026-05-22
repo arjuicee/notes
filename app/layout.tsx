@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "../components/header";
 import { DataProvider } from "@/lib/DataContext";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Footer from "@/components/footer";
 
 // Replace this with your actual image URL (1200x630 recommended)
 const ogImageUrl = "https://notes.uck.ac.in/og-image.jpg";
@@ -58,15 +59,16 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-no-repeat bg-cover bg-center bg-[url('https://random-image-pepebigotes.vercel.app/api/random-image')] backdrop-brightness-50 bg-black/50">
+      <body className="bg-no-repeat bg-cover bg-center bg-[url('https://random-image-flax.vercel.app//api/random-image')] backdrop-brightness-50 bg-black/50">
         <DataProvider>
           <Header />
           <div className="min-h-screen text-white flex flex-col justify-center items-center p-4 sm:p-6">
             <div className="absolute inset-0 -z-10">
-              <div className="w-full h-full bg-[url('https://random-image-pepebigotes.vercel.app/api/random-image')] bg-no-repeat bg-cover bg-center brightness-50 "></div>
+              <div className="w-full h-full bg-[url('https://random-image-flax.vercel.app//api/random-image')] bg-no-repeat bg-cover bg-center brightness-50 "></div>
             </div>
             {children}
           </div>
+          <Footer />
         </DataProvider>
         <GoogleAnalytics gaId="G-4VMW6ZQRS1" />
       </body>

@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "random-image-pepebigotes.vercel.app",
+        hostname: "https://random-image-flax.vercel.app/",
         port: "",
         pathname: "/api/random-image",
       },
