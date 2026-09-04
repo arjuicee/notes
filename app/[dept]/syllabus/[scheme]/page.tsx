@@ -12,7 +12,9 @@ export default function SchemeSyllabusPage() {
   /*
    * Syllabus links
    *
-   * Add new 2025 syllabus links here as they become available.
+   * For ECE 2025 Semester 1 & 2, the semester
+   * card leads to a subject list instead of
+   * directly opening a PDF.
    */
   const syllabusLinks: {
     [scheme: string]: {
@@ -80,6 +82,10 @@ export default function SchemeSyllabusPage() {
           'https://drive.google.com/file/d/1GcSQFFiQu-BhfnMVk3oEjwTs2F-tCsx-/view?usp=sharing',
       },
 
+      /*
+       * ECE 2025 Semester 1 & 2 is handled
+       * through the subject list page.
+       */
       ece: {},
 
       it: {},
@@ -90,6 +96,14 @@ export default function SchemeSyllabusPage() {
     syllabusLinks[scheme]?.[dept] ?? {};
 
   const semesters = ['1-2', '3', '4', '5', '6', '7', '8'];
+
+  /*
+   * ECE 2025 Semester 1 & 2 should open
+   * the subject list instead of a PDF.
+   */
+  const isECE2025Semester12 =
+    dept === 'ece' &&
+    scheme === '2025';
 
   const openSyllabus = (semester: string) => {
     const url = deptLinks[semester];
@@ -162,34 +176,65 @@ export default function SchemeSyllabusPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-8 w-full max-w-6xl items-stretch">
 
           {semesters.map((semester) => {
-            const hasSyllabus = Boolean(deptLinks[semester]);
+
+            /*
+             * ECE + 2025:
+             * Semester 1 & 2 opens the subject list.
+             */
+            const isSubjectList =
+              isECE2025Semester12 &&
+              semester === '1-2';
+
+            const hasSyllabus =
+              isSubjectList || Boolean(deptLinks[semester]);
 
             return (
-              <button
-                key={semester}
-                onClick={() => openSyllabus(semester)}
-                disabled={!hasSyllabus}
-                className={`group relative flex flex-col items-center justify-center bg-black/60 border border-white/20 rounded-xl shadow-md px-4 py-3 sm:px-6 sm:py-4 transition-all duration-300 backdrop-blur-md overflow-hidden h-full min-h-[72px]
-                  ${
-                    hasSyllabus
-                      ? 'cursor-pointer hover:scale-105 hover:shadow-2xl'
-                      : 'cursor-not-allowed opacity-40'
-                  }
-                `}
-                style={{
-                  minWidth: '290px',
-                  maxWidth: '290px',
-                  margin: '0 auto',
-                }}
-              >
-                <span className="z-10 text-white text-base sm:text-lg font-semibold text-center break-words">
-                  {semester === '1-2'
-                    ? 'Semester 1 & 2'
-                    : `Semester ${semester}`}
-                </span>
+              <div key={semester}>
 
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-white/10 to-black/10 pointer-events-none" />
-              </button>
+                {isSubjectList ? (
+                  <Link
+                    href={`/${dept}/syllabus/${scheme}/${semester}`}
+                    className="group relative flex flex-col items-center justify-center bg-black/60 border border-white/20 rounded-xl shadow-md px-4 py-3 sm:px-6 sm:py-4 transition-all duration-300 backdrop-blur-md cursor-pointer hover:scale-105 hover:shadow-2xl overflow-hidden h-full min-h-[72px]"
+                    style={{
+                      minWidth: '290px',
+                      maxWidth: '290px',
+                      margin: '0 auto',
+                    }}
+                  >
+                    <span className="z-10 text-white text-base sm:text-lg font-semibold text-center break-words">
+                      Semester 1 & 2
+                    </span>
+
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-white/10 to-black/10 pointer-events-none" />
+                  </Link>
+                ) : (
+                  <button
+                    onClick={() => openSyllabus(semester)}
+                    disabled={!hasSyllabus}
+                    className={`group relative flex flex-col items-center justify-center bg-black/60 border border-white/20 rounded-xl shadow-md px-4 py-3 sm:px-6 sm:py-4 transition-all duration-300 backdrop-blur-md overflow-hidden h-full min-h-[72px]
+                      ${
+                        hasSyllabus
+                          ? 'cursor-pointer hover:scale-105 hover:shadow-2xl'
+                          : 'cursor-not-allowed opacity-40'
+                      }
+                    `}
+                    style={{
+                      minWidth: '290px',
+                      maxWidth: '290px',
+                      margin: '0 auto',
+                    }}
+                  >
+                    <span className="z-10 text-white text-base sm:text-lg font-semibold text-center break-words">
+                      {semester === '1-2'
+                        ? 'Semester 1 & 2'
+                        : `Semester ${semester}`}
+                    </span>
+
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-white/10 to-black/10 pointer-events-none" />
+                  </button>
+                )}
+
+              </div>
             );
           })}
 
