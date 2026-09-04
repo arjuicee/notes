@@ -53,24 +53,34 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <meta
+          name="apple-mobile-web-app-capable"
+          content="yes"
+        />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/icons/icon-192x192.png"
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-{/* <body className="bg-no-repeat bg-cover bg-center bg-[url('https://random-image-flax.vercel.app//api/random-image')] backdrop-brightness-50 bg-black/50"> */}
-		<body className = "bg-slate-900">
-        <DataProvider>
-          <Header />
-          <div className="min-h-screen text-white flex flex-col justify-center items-center p-4 sm:p-6">
-{/*<div className="absolute inset-0 -z-10">
-              <div className="w-full h-full bg-[url('https://random-image-flax.vercel.app//api/random-image')] bg-no-repeat bg-cover bg-center brightness-50 "></div>
 
-            </div>*/}
-            {children}
+      <body className="min-h-screen bg-slate-900">
+        <DataProvider>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+
+            <main className="text-white flex flex-col items-center p-4 sm:p-6">
+              {children}
+            </main>
+
+            <Footer />
           </div>
-          <Footer />
         </DataProvider>
+
         <GoogleAnalytics gaId="G-4VMW6ZQRS1" />
       </body>
     </html>

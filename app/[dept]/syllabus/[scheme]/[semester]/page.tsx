@@ -78,7 +78,6 @@ export default async function SyllabusSemesterPage({
   return (
     <main className="w-full flex flex-col items-center px-4 py-6 sm:px-6">
       <div className="w-full max-w-6xl">
-        {/* Header */}
         <div className="mb-6">
           <Link
             href={`/${dept}/syllabus/${scheme}`}
