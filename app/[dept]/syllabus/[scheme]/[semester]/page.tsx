@@ -3,59 +3,59 @@ import Link from "next/link";
 const subjects = [
   {
     name: "Overall",
-    url: "https://example.com/overall",
+    url: "https://drive.google.com/file/d/1rEu6zwBG9HJ_0RKPyzpNPj5Y10esTPbV/view?usp=drive_link",
   },
   {
     name: "MATHEMATICS FOR ELECTRICAL SCIENCE AND PHYSICAL SCIENCE – 1",
-    url: "https://example.com/maths-1",
+    url: "https://drive.google.com/file/d/1HCLC-WiHJ1Vyxlrnu5WT3YozJ4Cjo7rz/view?usp=drive_link",
   },
   {
     name: "NETWORK THEORY",
-    url: "https://example.com/network-theory",
+    url: "https://drive.google.com/file/d/1ioglKUciqPIYitkjzIqExcdoDvY15LxF/view?usp=drive_link",
   },
   {
     name: "PHYSICS FOR ELECTRICAL SCIENCE",
-    url: "https://example.com/physics",
+    url: "https://drive.google.com/file/d/1lH6WKCbVqPRdLQtAPx3s2-DGyGvsjWLi/view?usp=drive_link",
   },
   {
     name: "CHEMISTRY FOR INFORMATION SCIENCE & ELECTRICAL SCIENCE",
-    url: "https://example.com/chemistry",
+    url: "https://drive.google.com/file/d/1JhHwWZjvi86nFyBaebKEy67yFpz02395/view?usp=drive_link",
   },
   {
     name: "ENGINEERING GRAPHICS AND COMPUTER AIDED DRAWING",
-    url: "https://example.com/egcad",
+    url: "https://drive.google.com/file/d/1kzY8YlnKaZg3vJiTZDZRj-xUPgT6YXNn/view?usp=drive_link",
   },
   {
     name: "ENGINEERING MECHANICS",
-    url: "https://example.com/mechanics",
+    url: "https://drive.google.com/file/d/1wqyVkTP1cOR1D23hxJY3DyVgEwRDdJNu/view?usp=drive_link",
   },
   {
     name: "INTRODUCTION TO ELECTRICAL AND ELECTRONICS ENGINEERING",
-    url: "https://example.com/ieee",
+    url: "https://drive.google.com/file/d/1m11tfh7ZtPctX7cBDytmhSHkbiTcN46J/view?usp=drive_link",
   },
   {
     name: "INTRODUCTION TO MECHANICAL ENGINEERING & CIVIL ENGINEERING",
-    url: "https://example.com/imce",
+    url: "https://drive.google.com/file/d/1uP3Q06k7nNxSmsEDQX_jDPh_gWak1c9G/view?usp=drive_link",
   },
   {
     name: "ALGORITHMIC THINKING WITH PYTHON",
-    url: "https://example.com/python",
+    url: "https://drive.google.com/file/d/1y5SAX0u5rYjt3BT5ht4XVEr9Xff2u6BO/view?usp=drive_link",
   },
   {
     name: "FOUNDATIONS OF COMPUTING: FROM HARDWARE ESSENTIALS TO WEB DESIGN",
-    url: "https://example.com/computing",
+    url: "https://drive.google.com/file/d/1X83cuVyLEHglThOOdvQoozkIwx-iFppS/view?usp=drive_link",
   },
   {
     name: "MATHEMATICS FOR ELECTRICAL SCIENCE AND PHYSICAL SCIENCE – 2",
-    url: "https://example.com/maths-2",
+    url: "https://drive.google.com/file/d/1BX-1wJq0YCuC8BwPU7iZqkjOrN50fUK0/view?usp=drive_link",
   },
   {
     name: "PROGRAMMING IN C",
-    url: "https://example.com/c",
+    url: "https://drive.google.com/file/d/11c2sLgdEz6UuA_38Q195jtaOOS5lL2pJ/view?usp=drive_link",
   },
   {
     name: "ENGINEERING ETHICS AND SUSTAINABLE DEVELOPMENT",
-    url: "https://example.com/ethics",
+    url: "https://drive.google.com/file/d/18gr2iEAggi8_HWHx9casLD7PWVye7KeZ/view?usp=drive_link",
   },
 ];
 
