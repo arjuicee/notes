@@ -12,9 +12,9 @@ export default function SchemeSyllabusPage() {
   /*
    * Syllabus links
    *
-   * For ECE 2025 Semester 1 & 2, the semester
-   * card leads to a subject list instead of
-   * directly opening a PDF.
+   * CSE 2025 Semester 1 & 2 and ECE 2025
+   * Semester 1 & 2 are handled through their
+   * respective subject list pages.
    */
   const syllabusLinks: {
     [scheme: string]: {
@@ -78,8 +78,14 @@ export default function SchemeSyllabusPage() {
 
     '2025': {
       cse: {
+        /*
+         * OLD CSE 2025 Semester 1 & 2 PDF ROUTING
+         * Replaced by the subject-wise page.
+         */
+        /*
         '1-2':
           'https://drive.google.com/file/d/1GcSQFFiQu-BhfnMVk3oEjwTs2F-tCsx-/view?usp=sharing',
+        */
       },
 
       /*
@@ -98,12 +104,12 @@ export default function SchemeSyllabusPage() {
   const semesters = ['1-2', '3', '4', '5', '6', '7', '8'];
 
   /*
-   * ECE 2025 Semester 1 & 2 should open
-   * the subject list instead of a PDF.
+   * CSE + ECE 2025 Semester 1 & 2
+   * should open the subject list.
    */
-  const isECE2025Semester12 =
-    dept === 'ece' &&
-    scheme === '2025';
+  const isSubjectListSemester12 =
+    scheme === '2025' &&
+    (dept === 'cse' || dept === 'ece');
 
   const openSyllabus = (semester: string) => {
     const url = deptLinks[semester];
@@ -178,11 +184,11 @@ export default function SchemeSyllabusPage() {
           {semesters.map((semester) => {
 
             /*
-             * ECE + 2025:
+             * CSE + ECE + 2025:
              * Semester 1 & 2 opens the subject list.
              */
             const isSubjectList =
-              isECE2025Semester12 &&
+              isSubjectListSemester12 &&
               semester === '1-2';
 
             const hasSyllabus =

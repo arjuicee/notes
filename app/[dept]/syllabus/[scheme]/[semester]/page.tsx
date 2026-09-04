@@ -1,63 +1,124 @@
 import Link from "next/link";
 
-const subjects = [
-  {
-    name: "Overall",
-    url: "https://drive.google.com/file/d/1rEu6zwBG9HJ_0RKPyzpNPj5Y10esTPbV/view?usp=drive_link",
-  },
-  {
-    name: "MATHEMATICS FOR ELECTRICAL SCIENCE AND PHYSICAL SCIENCE – 1",
-    url: "https://drive.google.com/file/d/1HCLC-WiHJ1Vyxlrnu5WT3YozJ4Cjo7rz/view?usp=drive_link",
-  },
-  {
-    name: "NETWORK THEORY",
-    url: "https://drive.google.com/file/d/1ioglKUciqPIYitkjzIqExcdoDvY15LxF/view?usp=drive_link",
-  },
-  {
-    name: "PHYSICS FOR ELECTRICAL SCIENCE",
-    url: "https://drive.google.com/file/d/1lH6WKCbVqPRdLQtAPx3s2-DGyGvsjWLi/view?usp=drive_link",
-  },
-  {
-    name: "CHEMISTRY FOR INFORMATION SCIENCE & ELECTRICAL SCIENCE",
-    url: "https://drive.google.com/file/d/1JhHwWZjvi86nFyBaebKEy67yFpz02395/view?usp=drive_link",
-  },
-  {
-    name: "ENGINEERING GRAPHICS AND COMPUTER AIDED DRAWING",
-    url: "https://drive.google.com/file/d/1kzY8YlnKaZg3vJiTZDZRj-xUPgT6YXNn/view?usp=drive_link",
-  },
-  {
-    name: "ENGINEERING MECHANICS",
-    url: "https://drive.google.com/file/d/1wqyVkTP1cOR1D23hxJY3DyVgEwRDdJNu/view?usp=drive_link",
-  },
-  {
-    name: "INTRODUCTION TO ELECTRICAL AND ELECTRONICS ENGINEERING",
-    url: "https://drive.google.com/file/d/1m11tfh7ZtPctX7cBDytmhSHkbiTcN46J/view?usp=drive_link",
-  },
-  {
-    name: "INTRODUCTION TO MECHANICAL ENGINEERING & CIVIL ENGINEERING",
-    url: "https://drive.google.com/file/d/1uP3Q06k7nNxSmsEDQX_jDPh_gWak1c9G/view?usp=drive_link",
-  },
-  {
-    name: "ALGORITHMIC THINKING WITH PYTHON",
-    url: "https://drive.google.com/file/d/1y5SAX0u5rYjt3BT5ht4XVEr9Xff2u6BO/view?usp=drive_link",
-  },
-  {
-    name: "FOUNDATIONS OF COMPUTING: FROM HARDWARE ESSENTIALS TO WEB DESIGN",
-    url: "https://drive.google.com/file/d/1X83cuVyLEHglThOOdvQoozkIwx-iFppS/view?usp=drive_link",
-  },
-  {
-    name: "MATHEMATICS FOR ELECTRICAL SCIENCE AND PHYSICAL SCIENCE – 2",
-    url: "https://drive.google.com/file/d/1BX-1wJq0YCuC8BwPU7iZqkjOrN50fUK0/view?usp=drive_link",
-  },
-  {
-    name: "PROGRAMMING IN C",
-    url: "https://drive.google.com/file/d/11c2sLgdEz6UuA_38Q195jtaOOS5lL2pJ/view?usp=drive_link",
-  },
-  {
-    name: "ENGINEERING ETHICS AND SUSTAINABLE DEVELOPMENT",
-    url: "https://drive.google.com/file/d/18gr2iEAggi8_HWHx9casLD7PWVye7KeZ/view?usp=drive_link",
-  },
-];
+const subjects = {
+  ece: [
+    {
+      name: "FULL ECE SYLLABUS",
+      url: "https://drive.google.com/file/d/1rEu6zwBG9HJ_0RKPyzpNPj5Y10esTPbV/view?usp=drive_link",
+    },
+    {
+      name: "MATHEMATICS FOR ELECTRICAL SCIENCE AND PHYSICAL SCIENCE – 1",
+      url: "https://drive.google.com/file/d/1HCLC-WiHJ1Vyxlrnu5WT3YozJ4Cjo7rz/view?usp=drive_link",
+    },
+    {
+      name: "NETWORK THEORY",
+      url: "https://drive.google.com/file/d/1ioglKUciqPIYitkjzIqExcdoDvY15LxF/view?usp=drive_link",
+    },
+    {
+      name: "PHYSICS FOR ELECTRICAL SCIENCE",
+      url: "https://drive.google.com/file/d/1lH6WKCbVqPRdLQtAPx3s2-DGyGvsjWLi/view?usp=drive_link",
+    },
+    {
+      name: "CHEMISTRY FOR INFORMATION SCIENCE & ELECTRICAL SCIENCE",
+      url: "https://drive.google.com/file/d/1JhHwWZjvi86nFyBaebKEy67yFpz02395/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING GRAPHICS AND COMPUTER AIDED DRAWING",
+      url: "https://drive.google.com/file/d/1kzY8YlnKaZg3vJiTZDZRj-xUPgT6YXNn/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING MECHANICS",
+      url: "https://drive.google.com/file/d/1wqyVkTP1cOR1D23hxJY3DyVgEwRDdJNu/view?usp=drive_link",
+    },
+    {
+      name: "INTRODUCTION TO ELECTRICAL AND ELECTRONICS ENGINEERING",
+      url: "https://drive.google.com/file/d/1m11tfh7ZtPctX7cBDytmhSHkbiTcN46J/view?usp=drive_link",
+    },
+    {
+      name: "INTRODUCTION TO MECHANICAL ENGINEERING & CIVIL ENGINEERING",
+      url: "https://drive.google.com/file/d/1uP3Q06k7nNxSmsEDQX_jDPh_gWak1c9G/view?usp=drive_link",
+    },
+    {
+      name: "ALGORITHMIC THINKING WITH PYTHON",
+      url: "https://drive.google.com/file/d/1y5SAX0u5rYjt3BT5ht4XVEr9Xff2u6BO/view?usp=drive_link",
+    },
+    {
+      name: "FOUNDATIONS OF COMPUTING: FROM HARDWARE ESSENTIALS TO WEB DESIGN",
+      url: "https://drive.google.com/file/d/1X83cuVyLEHglThOOdvQoozkIwx-iFppS/view?usp=drive_link",
+    },
+    {
+      name: "MATHEMATICS FOR ELECTRICAL SCIENCE AND PHYSICAL SCIENCE – 2",
+      url: "https://drive.google.com/file/d/1BX-1wJq0YCuC8BwPU7iZqkjOrN50fUK0/view?usp=drive_link",
+    },
+    {
+      name: "PROGRAMMING IN C",
+      url: "https://drive.google.com/file/d/11c2sLgdEz6UuA_38Q195jtaOOS5lL2pJ/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING ETHICS AND SUSTAINABLE DEVELOPMENT",
+      url: "https://drive.google.com/file/d/18gr2iEAggi8_HWHx9casLD7PWVye7KeZ/view?usp=drive_link",
+    },
+  ],
+
+  cse: [
+    {
+      name: "FULL CSE SYLLABUS",
+      url: "https://drive.google.com/file/d/1n19Rk0KdKSKzv8uvbJ3KoZaoQ1ImkujI/view?usp=drive_link",
+    },
+    {
+      name: "MATHEMATICS FOR INFORMATION SCIENCE – 1",
+      url: "https://drive.google.com/file/d/1rM2zFrXBdzYuMEBeoESXDd1WPYajdptV/view?usp=drive_link",
+    },
+    {
+      name: "PHYSICS FOR INFORMATION SCIENCE",
+      url: "https://drive.google.com/file/d/1Ftl_oDreSWC1-4J51wouxWUTqphRKtvV/view?usp=drive_link",
+    },
+    {
+      name: "CHEMISTRY FOR INFORMATION SCIENCE & ELECTRICAL SCIENCE",
+      url: "https://drive.google.com/file/d/1ItsvieI5i2_71VZvI90zCYReq0rcX0Vn/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING GRAPHICS AND COMPUTER AIDED DRAWING",
+      url: "https://drive.google.com/file/d/1kQewgQYkXw3gtG9i-vqTeT3N1JFRehDg/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING MECHANICS",
+      url: "https://drive.google.com/file/d/13lmCiG5d5xjYzdClcxPWaGGoGsAkP-0y/view?usp=drive_link",
+    },
+    {
+      name: "INTRODUCTION TO ELECTRICAL AND ELECTRONICS ENGINEERING",
+      url: "https://drive.google.com/file/d/1Lfx7tXFqYZVkRN1onSS7p0XqT06Hib-I/view?usp=drive_link",
+    },
+    {
+      name: "INTRODUCTION TO MECHANICAL ENGINEERING & CIVIL ENGINEERING",
+      url: "https://drive.google.com/file/d/1JP4--FOwqFbiE2GDOxa0hYK4a8DSIMPj/view?usp=drive_link",
+    },
+    {
+      name: "ALGORITHMIC THINKING WITH PYTHON",
+      url: "https://drive.google.com/file/d/19dBbvAZViYJLdm2Jzj8wo6Cao8b1miiT/view?usp=drive_link",
+    },
+    {
+      name: "FOUNDATIONS OF COMPUTING: FROM HARDWARE ESSENTIALS TO WEB DESIGN",
+      url: "https://drive.google.com/file/d/1PQXj9Ul-v6XKe40_96AT8SEwbcYmBj5c/view?usp=drive_link",
+    },
+    {
+      name: "MATHEMATICS FOR INFORMATION SCIENCE – 2",
+      url: "https://drive.google.com/file/d/1QooR22h9YYho3afnlJqqfeD6ye1itu6i/view?usp=drive_link",
+    },
+    {
+      name: "PROGRAMMING IN C",
+      url: "https://drive.google.com/file/d/1ZlT6mPO-dBARzxcbGEZqB2gEf0ArCIHL/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING ETHICS AND SUSTAINABLE DEVELOPMENT",
+      url: "https://drive.google.com/file/d/1NuD36c7IQH8Zymjxn6sVhMFeo1oIKf4q/view?usp=drive_link",
+    },
+    {
+      name: "DISCRETE MATHEMATICS",
+      url: "https://drive.google.com/file/d/1VDhUscTtkwbtXEDOwhi5e6vxvrRd_N2D/view?usp=drive_link",
+    },
+  ],
+};
 
 export default async function SyllabusSemesterPage({
   params,
@@ -70,10 +131,17 @@ export default async function SyllabusSemesterPage({
 }) {
   const { dept, scheme, semester } = await params;
 
-  const isECE2025Semester12 =
-    dept === "ece" &&
+  const isSemester12 =
+    (semester === "1-2" || semester === "1%2D2") &&
     scheme === "2025" &&
-    (semester === "1-2" || semester === "1%2D2");
+    (dept === "ece" || dept === "cse");
+
+  const departmentSubjects =
+    dept === "ece"
+      ? subjects.ece
+      : dept === "cse"
+        ? subjects.cse
+        : [];
 
   return (
     <main className="w-full flex flex-col items-center px-4 py-6 sm:px-6">
@@ -95,7 +163,7 @@ export default async function SyllabusSemesterPage({
           </p>
         </div>
 
-        {!isECE2025Semester12 ? (
+        {!isSemester12 ? (
           <div className="text-center text-white/70 py-10">
             Subject-wise syllabus is not available for this semester.
           </div>
@@ -113,7 +181,7 @@ export default async function SyllabusSemesterPage({
               max-w-6xl
             "
           >
-            {subjects.map((subject) => (
+            {departmentSubjects.map((subject) => (
               <a
                 key={subject.name}
                 href={subject.url}
