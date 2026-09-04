@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  allowedDevOrigins: ["10.230.83.75"],
+
   images: {
     remotePatterns: [
       {
@@ -12,7 +13,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "https://random-image-flax.vercel.app/",
+        hostname: "random-image-flax.vercel.app",
         port: "",
         pathname: "/api/random-image",
       },
@@ -27,9 +28,9 @@ const nextConfig: NextConfig = {
         hostname: "lh3.googleusercontent.com",
         port: "",
         pathname: "/**",
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 
 export default nextConfig;

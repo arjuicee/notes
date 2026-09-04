@@ -58,13 +58,15 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="bg-no-repeat bg-cover bg-center bg-[url('https://random-image-flax.vercel.app//api/random-image')] backdrop-brightness-50 bg-black/50">
+{/* <body className="bg-no-repeat bg-cover bg-center bg-[url('https://random-image-flax.vercel.app//api/random-image')] backdrop-brightness-50 bg-black/50"> */}
+		<body className = "bg-slate-900">
         <DataProvider>
           <Header />
           <div className="min-h-screen text-white flex flex-col justify-center items-center p-4 sm:p-6">
-            <div className="absolute inset-0 -z-10">
+{/*<div className="absolute inset-0 -z-10">
               <div className="w-full h-full bg-[url('https://random-image-flax.vercel.app//api/random-image')] bg-no-repeat bg-cover bg-center brightness-50 "></div>
-            </div>
+
+            </div>*/}
             {children}
           </div>
           <Footer />
