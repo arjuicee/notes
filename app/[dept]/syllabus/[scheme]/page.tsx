@@ -109,7 +109,7 @@ export default function SchemeSyllabusPage() {
    */
   const isSubjectListSemester12 =
     scheme === '2025' &&
-    (dept === 'cse' || dept === 'ece');
+    (dept === 'cse' || dept === 'ece' || dept === 'it');
 
   const openSyllabus = (semester: string) => {
     const url = deptLinks[semester];

@@ -11,7 +11,7 @@ const subjects = {
       url: "https://drive.google.com/file/d/1HCLC-WiHJ1Vyxlrnu5WT3YozJ4Cjo7rz/view?usp=drive_link",
     },
     {
-      name: "NETWORK THEORY",
+      name: "NETWORK THEORY (CORE)",
       url: "https://drive.google.com/file/d/1ioglKUciqPIYitkjzIqExcdoDvY15LxF/view?usp=drive_link",
     },
     {
@@ -114,8 +114,66 @@ const subjects = {
       url: "https://drive.google.com/file/d/1NuD36c7IQH8Zymjxn6sVhMFeo1oIKf4q/view?usp=drive_link",
     },
     {
-      name: "DISCRETE MATHEMATICS",
+      name: "DISCRETE MATHEMATICS (CORE)",
       url: "https://drive.google.com/file/d/1VDhUscTtkwbtXEDOwhi5e6vxvrRd_N2D/view?usp=drive_link",
+    },
+  ],
+  it: [
+    {
+      name: "FULL IT SYLLABUS",
+      url: "https://drive.google.com/file/d/1tHjoCS1oT_Mbcf3IhST2uEgyA4L3yh9Y/view?usp=drive_link",
+    },
+    {
+      name: "MATHEMATICS FOR INFORMATION SCIENCE – 1",
+      url: "https://drive.google.com/file/d/1ew5kXTKrMdFVDTXITnl5cfT8qGKiA1o4/view?usp=drive_link",
+    },
+    {
+      name: "PHYSICS FOR INFORMATION SCIENCE",
+      url: "https://drive.google.com/file/d/1-K9qqUGEXGrIs5_fryTLl77vX3w8xlt4/view?usp=drive_link",
+    },
+    {
+      name: "CHEMISTRY FOR INFORMATION SCIENCE & ELECTRICAL SCIENCE",
+      url: "https://drive.google.com/file/d/1RHSx6Gpzr2P4_AVNOJa7dsXfrKbAymRC/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING GRAPHICS AND COMPUTER AIDED DRAWING",
+      url: "https://drive.google.com/file/d/1q3pakyjYLFuyWS0TK2n5HLWtypme5Jwp/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING MECHANICS",
+      url: "https://drive.google.com/file/d/1ciES6cPEfJkh9W_V-5Qi2-5jbDXcx-fS/view?usp=drive_link",
+    },
+    {
+      name: "INTRODUCTION TO ELECTRICAL AND ELECTRONICS ENGINEERING",
+      url: "https://drive.google.com/file/d/1oil8nvFVVosYp4YeRRZ1KZNYXR4EBekl/view?usp=drive_link",
+    },
+    {
+      name: "INTRODUCTION TO MECHANICAL ENGINEERING & CIVIL ENGINEERING",
+      url: "https://drive.google.com/file/d/1l2cvJSLGq0AVRN5bwatzeDswpSvurqp6/view?usp=drive_link",
+    },
+    {
+      name: "ALGORITHMIC THINKING WITH PYTHON",
+      url: "https://drive.google.com/file/d/1ugnjRslVCgcJin-3mBodIxGAA4sRNIpx/view?usp=drive_link",
+    },
+    {
+      name: "FOUNDATIONS OF COMPUTING: FROM HARDWARE ESSENTIALS TO WEB DESIGN",
+      url: "https://drive.google.com/file/d/1N_pry7XEGHJPoyPmtVdKCVgYZ4EG2aHh/view?usp=drive_link",
+    },
+    {
+      name: "MATHEMATICS FOR INFORMATION SCIENCE – 2",
+      url: "https://drive.google.com/file/d/1CSExt42CXCwI82yYOM4UlBXkr-bkgXiM/view?usp=drive_link",
+    },
+    {
+      name: "PROGRAMMING IN C",
+      url: "https://drive.google.com/file/d/1o5w0oKfUG5npmk3koQgf3TnOM1hSrkCa/view?usp=drive_link",
+    },
+    {
+      name: "ENGINEERING ETHICS AND SUSTAINABLE DEVELOPMENT",
+      url: "https://drive.google.com/file/d/1WPirx_YdwUbna60vYZHNxDzFSB31S2Nj/view?usp=drive_link",
+    },
+    {
+      name: "DISCRETE MATHEMATICAL STRUCTURES (CORE)",
+      url: "https://drive.google.com/file/d/1nNHDfy_FKiyH1eQZ6uSXqOHc0CFh7pej/view?usp=drive_link",
     },
   ],
 };
@@ -131,16 +189,18 @@ export default async function SyllabusSemesterPage({
 }) {
   const { dept, scheme, semester } = await params;
 
-  const isSemester12 =
-    (semester === "1-2" || semester === "1%2D2") &&
-    scheme === "2025" &&
-    (dept === "ece" || dept === "cse");
+const isSemester12 =
+  (semester === "1-2" || semester === "1%2D2") &&
+  scheme === "2025" &&
+  (dept === "ece" || dept === "cse" || dept === "it");
 
-  const departmentSubjects =
-    dept === "ece"
-      ? subjects.ece
-      : dept === "cse"
-        ? subjects.cse
+const departmentSubjects =
+  dept === "ece"
+    ? subjects.ece
+    : dept === "cse"
+      ? subjects.cse
+      : dept === "it"
+        ? subjects.it
         : [];
 
   return (
